@@ -10,21 +10,20 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 const uri = `mongodb+srv://pavan:pavan@2004@cluster0.ssambzi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 const ur="mongodb://127.0.0.1:27017/test";
+
 const getData = async () => {
     await mongoose.connect(process.env.uri);
     console.log("database connected");
    
 }
 
-// MongoDB connection
 getData();
 
-// Routes
+
 app.get('/get1', async(req, res) => {
 
     try{
